@@ -1,6 +1,25 @@
 # MP 2: Front-end App
 ### Due: Tuesday, Oct 6, 2026, 11:59PM CT
 
+## Project implementation
+
+**Field Notes** is a responsive Kanto Pokédex built with React, TypeScript,
+React Router, Axios, and the public [PokéAPI](https://pokeapi.co/). It includes
+a searchable and sortable specimen index, a type-filterable illustration
+gallery, and directly addressable detail pages with previous/next navigation.
+
+Run the project locally with `npm install` followed by `npm run dev`. Create an
+optimized deployment with `npm run build`.
+
+### Sources
+
+- Data and official artwork: [PokéAPI](https://pokeapi.co/)
+- Fonts: [Google Fonts](https://fonts.google.com/) (DM Sans, DM Mono, and
+  Playfair Display)
+- Framework documentation: [React](https://react.dev/),
+  [React Router](https://reactrouter.com/), [Axios](https://axios-http.com/),
+  and [Vite](https://vite.dev/)
+
 ## Table of Contents
 1. [Assignment](#assignment)
 2. [Grading Breakdown](#grading-breakdown)
