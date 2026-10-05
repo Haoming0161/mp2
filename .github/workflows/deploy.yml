@@ -29,13 +29,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # `npm ci` requires a committed package-lock.json. This repository was
+        # bootstrapped in an environment where the npm registry was blocked, so
+        # install directly until a lockfile can be generated and committed.
+        run: npm install --no-audit --no-fund
 
       - name: Build site
         run: npm run build
+
+      # GitHub Pages has no server-side SPA fallback. Serving the Vite entry
+      # point as 404.html lets direct links such as /mp2/pokemon/25 load and
+      # allows React Router to resolve the requested route in the browser.
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
